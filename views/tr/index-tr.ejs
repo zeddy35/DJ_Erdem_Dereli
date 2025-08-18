@@ -1,0 +1,328 @@
+<!--
+    HOME
+-->
+
+<section id="home" class="relative h-[100svh] flex items-center justify-center bg-black overflow-hidden">
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0 brightness-50">
+    <source src="/videos/bg-video.mp4" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+  <div class="relative z-10 text-center text-white container mx-auto px-6">
+    <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6 will-animate" data-anim="rise">
+      DJ <span class="text-gold">Erdem Dereli</span> ile Geceyi Ateşleyin
+    </h1>
+    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto will-animate" data-anim="fade">
+      Düğünler, nişanlar ve özel etkinlikler için unutulmaz müzik deneyimleri.
+    </p>
+    <a href="#booking" class="bg-gold hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium inline-block will-animate" data-anim="pop">
+      Hemen Rezervasyon Yap
+    </a>
+  </div>
+
+  <a href="#about" class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white z-10 will-animate" data-anim="float">
+    <i class="fas fa-chevron-down text-2xl"></i>
+  </a>
+</section>
+
+<!--
+    ABOUT
+-->
+
+<section id="about" class="py-20 bg-cream">
+  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <div class="md:pr-10 will-animate" data-anim="slide-right">
+      <img src="/images/about-dj.jpg" alt="DJ Erdem Dereli" class="rounded-lg shadow-xl w-full max-w-md mx-auto">
+    </div>
+    <div class="will-animate" data-anim="slide-left">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gold">DJ Erdem Dereli Hakkında</h2>
+      <p class="text-lg mb-4">
+        Ben DJ Erdem Dereli. 20 yılı aşkın süredir düğünler, nişanlar, kurumsal davetler, doğum günleri ve sayısız kutlamada unutulmaz müzik deneyimleri sunuyorum. Yılların tecrübesiyle her kitleyi okuyup müziği ortama göre uyarlayarak her etkinlikte ideal atmosferi kuruyorum.
+      </p>
+      <p class="text-lg mb-6">
+        Repertuvarım olağanüstü geniş: zamansız klasiklerden modern hitlere, geleneksel parçalardan dünya müziklerine kadar her tarz. Yüksek kaliteli ses sistemleri ve profesyonel yaklaşımımla enerjiyi ilk parçadan son ana kadar yüksek tutuyor, her etkinliği benzersiz ve unutulmaz kılıyorum.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-beige px-4 py-2 rounded-full">Düğünler</span>
+        <span class="bg-beige px-4 py-2 rounded-full">Kına Geceleri</span>
+        <span class="bg-beige px-4 py-2 rounded-full">Kurumsal Etkinlikler</span>
+        <span class="bg-beige px-4 py-2 rounded-full">Uluslararası Gösteriler</span>
+        <span class="bg-beige px-4 py-2 rounded-full">Açılışlar</span>
+        <span class="bg-beige px-4 py-2 rounded-full">Doğum Günleri</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+    SERVICES
+-->
+
+<section id="services" class="py-20 bg-beige">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 will-animate" data-anim="rise">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-gold">Hizmetler</h2>
+      <p class="text-lg max-w-2xl mx-auto">Her özel davete uygun, kişiye özel DJ hizmetleri</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <% const services = [
+        {icon:'fa-ring', title:"Düğün DJ'i", text:'Tören anından after-party’ye kusursuz kurgulanmış müzik akışı.'},
+        {icon:'fa-hand-holding-heart', title:'Nişan/Kına Gecesi', text:'Geleneksel ve modern ezgilerle yüksek enerjili bir kutlama.'},
+        {icon:'fa-briefcase', title:'Kurumsal Etkinlikler', text:'Şirket partileri ve iş etkinlikleri için profesyonel eğlence.'},
+        {icon:'fa-globe-americas', title:'Yurtdışı Etkinlikleri', text:'Dünya genelindeki organizasyonlar için performans.'},
+      ]; %>
+      <% services.forEach((s, i) => { %>
+        <div class="bg-cream p-8 rounded-lg shadow-md hover:shadow-xl transition will-animate" data-anim="card" style="--delay:<%= i * 0.05 %>s">
+          <div class="text-gold text-4xl mb-4"><i class="fas <%= s.icon %>"></i></div>
+          <h3 class="text-xl font-serif font-bold mb-3"><%= s.title %></h3>
+          <p class="text-gray-700"><%= s.text %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- 
+    REPERTOIRE
+-->
+
+<section id="repertoire" class="py-20 bg-cream">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 will-animate" data-anim="rise">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-gold">Müzik Repertuvarı</h2>
+      <p class="text-lg max-w-2xl mx-auto">Her kitleye hitap eden geniş tür yelpazesi</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% const genres = [
+        {img:'wedding-music.jpg', title:'Düğün Müzikleri', go:"https://open.spotify.com/playlist/5OkNPvep9JeCv5OiTrtFtZ?si=5a98d2effc94457c"},
+        {img:'90s.jpg', title:"90'lar Şarkıları", go:"https://open.spotify.com/playlist/3lVsR28nVFTAGdgw7gL7Vq?si=0da3b94636ed459f"},
+        {img:'intro.jpg', title:'İntrolar', go:'https://open.spotify.com/playlist/2M5DtlAp8820XbzGiLCGUc?si=fb83e68e20204375'},
+        {img:'house.jpg', title:'House', go:'https://open.spotify.com/playlist/5dDfZ9ze8l5eBWbMJBJe97?si=d19878b0044a4b58'},
+        {img:'afro.jpg', title:'Afro', go:'https://open.spotify.com/playlist/4nOGcQu6FknlZQGE3EX7z2?si=8a81d4d359954e24'},
+        {img:'ambiance.jpg', title:'Ambiyans', go:'https://open.spotify.com/playlist/7tfqzt2MxWulkwnOYMsDFN?si=f7c047ef38bf495c'}
+        ]; %>
+        <% genres.forEach((g, i) => { %>
+            <a href="<%= g.go %>">
+                <div class="relative group overflow-hidden rounded-lg shadow-md h-64 will-animate" data-anim="lift" style="--delay:<%= i * 0.04 %>s">
+                    <img src="/images/repertoire/<%= g.img %>" alt="<%= g.title %>" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 grid place-items-center">
+                        <h3 class="text-white text-2xl font-serif font-bold group-hover:text-gold transition"><%= g.title %></h3>
+                    </div>
+                </div>
+            </a>
+        <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- 
+    PLAYLISTS
+-->
+
+<section class="py-16 bg-olive/20">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-10 will-animate" data-anim="rise">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-gold">Öne Çıkan Çalma Listesi</h2>
+      <p class="text-lg">DJ Erdem Dereli'nin en yeni mikslerini dinleyin</p>
+    </div>
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden will-animate" data-anim="fade">
+      <div class="md:flex">
+        <div class="md:w-1/3"><img src="/images/playlist-dj.jpg" alt="Çalma Listesi Kapağı" class="w-full h-full object-cover"></div>
+        <div class="p-8 md:w-2/3">
+          <h3 class="text-2xl font-serif font-bold mb-2">Erdem'in Düğün Klasikleri</h3>
+          <p class="text-gray-600 mb-4">Özel gününüz için uluslararası hitlerin kusursuz karışımı</p>
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0sS4uAqSDxMV7hV4jtpWth?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+    GALLERY
+-->
+
+<section id="gallery" class="py-20 bg-beige">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 will-animate" data-anim="rise">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-gold">Etkinlik Galerisi</h2>
+      <p class="text-lg max-w-2xl mx-auto">Geçmiş etkinliklerin enerjisini ve atmosferini yakalıyoruz</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% for(let i=1;i<=6;i++){ %>
+        <a href="/images/gallery/<%= i %>.jpg" class="gallery-item group overflow-hidden rounded-lg shadow-md will-animate" data-anim="lift" style="--delay:<%= i * 0.03 %>s">
+          <img src="/images/gallery/thumbs/<%= i %>.jpg" alt="Etkinlik <%= i %>" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 grid place-items-center transition duration-300">
+            <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition duration-300"></i>
+          </div>
+        </a>
+      <% } %>
+    </div>
+    <div class="text-center mt-10">
+      <a href="/gallery" class="border border-gold text-gold px-6 py-2 rounded-full hover:bg-gold hover:text-white transition inline-block will-animate" data-anim="pop">Daha Fazla Fotoğraf Gör</a>
+    </div>
+  </div>
+</section>
+
+ <!--
+    BOOKING 
+ -->
+
+<section id="booking" class="py-20 bg-olive/10">
+  <div class="container mx-auto px-6">
+    <form action="/bookings" method="POST" class="bg-white rounded-xl shadow-md p-8 will-animate" data-anim="fade">
+      <% if (typeof bookingStatus !== 'undefined' && bookingStatus) { %>
+  <div class="mb-6 rounded-lg px-4 py-3 <%= bookingStatus==='ok' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200' %>">
+    <% if (bookingStatus === 'ok') { %>
+      <strong>Teşekkürler!</strong> Talebiniz alındı, en kısa sürede sizinle iletişime geçeceğim.
+    <% } else if (bookingStatus === 'val') { %>
+      <strong>Eksik bilgi!</strong> Lütfen tüm zorunlu alanları geçerli şekilde doldurun.
+    <% } else { %>
+      <strong>Hata!</strong> Mail gönderilemedi. Lütfen tekrar deneyin.
+    <% } %>
+  </div>
+<% } %>
+
+      <h3 class="text-xl font-serif font-bold mb-6 text-center">Rezervasyon Talep Formu</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="relative">
+          <input type="text" id="name" name="name" required 
+                 class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" 
+                 placeholder=" ">
+          <label for="name" class="floating">Ad Soyad</label>
+        </div>
+        <div class="relative">
+          <input type="email" id="email" name="email" required 
+                 class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" 
+                 placeholder=" ">
+          <label for="email" class="floating">E-posta Adresi</label>
+        </div>
+        <div class="relative">
+          <input type="tel" id="phone" name="phone" required 
+                 class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" 
+                 placeholder=" ">
+          <label for="phone" class="floating">Telefon Numarası</label>
+        </div>
+        <div class="relative">
+          <select id="event-type" name="eventType" required 
+          class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold appearance-none">
+            <option value="" disabled selected></option>
+            <option value="wedding">Düğün</option>
+            <option value="engagement">Nişan/Kına Gecesi</option>
+            <option value="corporate">Kurumsal Etkinlik</option>
+            <option value="private">Özel Parti</option>
+            <option value="other">Diğer</option>
+          </select>
+          <label for="event-type" class="floating">Etkinlik Türü</label>
+          <i class="fas fa-chevron-down absolute right-4 top-3 text-gray-400"></i>
+        </div>
+
+        <!-- ✅ Date field with min/max kept; labels translated -->
+        <div class="relative md:col-span-2">
+          <input type="date" id="event-date" name="eventDate" 
+                 min="1900-01-01" max="2099-12-31" required
+                 class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" 
+                 placeholder=" ">
+          <label for="event-date" class="floating">Etkinlik Tarihi</label>
+        </div>
+
+        <div class="relative md:col-span-2">
+          <textarea id="message" name="message" rows="4" 
+                    class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" 
+                    placeholder=" "></textarea>
+          <label for="message" class="floating">Etkinlik Detayları & Özel Talepler</label>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <button type="submit" 
+                class="bg-gold hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition will-animate" 
+                data-anim="pop">Rezervasyon Talebini Gönder</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="py-20 bg-beige">
+  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10">
+    <div class="bg-white rounded-xl shadow-md p-8 will-animate" data-anim="slide-right">
+      <h3 class="text-xl font-serif font-bold mb-6">İletişim Bilgileri</h3>
+      <div class="space-y-6">
+        <div class="flex items-start">
+          <div class="text-gold text-xl mr-4 mt-1"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <h4 class="font-bold mb-1">Telefon</h4>
+            <a href="tel:+905426752683" class="text-gray-700 hover:text-gold transition">+90 542 674 2683</a>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <div class="text-gold text-xl mr-4 mt-1"><i class="fas fa-envelope"></i></div>
+          <div>
+            <h4 class="font-bold mb-1">E-posta</h4>
+            <a href="mailto:booking@djerdemdereli.com" class="text-gray-700 hover:text-gold transition">derdemdereli@gmail.com</a>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <div class="text-gold text-xl mr-4 mt-1"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <h4 class="font-bold mb-1">WhatsApp</h4>
+            <a href="https://wa.me/905426752683" class="text-gray-700 hover:text-gold transition">+90 542 675 2683</a>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <div class="text-gold text-xl mr-4 mt-1"><i class="fab fa-instagram"></i></div>
+          <div>
+            <h4 class="font-bold mb-1">Instagram</h4>
+            <a href="https://instagram.com/djerdemdereli" class="text-gray-700 hover:text-gold transition">@djerdemdereli</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10">
+        <h4 class="font-bold mb-4">Beni Takip Et</h4>
+        <div class="flex gap-3">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-100 grid place-items-center text-gold hover:bg-gold hover:text-white transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-100 grid place-items-center text-gold hover:bg-gold hover:text-white transition"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-100 grid place-items-center text-gold hover:bg-gold hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-100 grid place-items-center text-gold hover:bg-gold hover:text-white transition"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <form action="/contact" method="POST" class="bg-white rounded-xl shadow-md p-8 will-animate" data-anim="slide-left">
+      <% if (typeof contactStatus !== 'undefined' && contactStatus) { %>
+  <div class="mb-6 rounded-lg px-4 py-3 <%= contactStatus==='ok' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200' %>">
+    <% if (contactStatus === 'ok') { %>
+      <strong>Teşekkürler!</strong> Mesajınız ulaştı, kısa süre içinde dönüş yapacağım.
+    <% } else if (contactStatus === 'val') { %>
+      <strong>Eksik bilgi!</strong> Lütfen ad, e-posta ve mesaj alanlarını geçerli şekilde doldurun.
+    <% } else { %>
+      <strong>Hata!</strong> Mesaj gönderilemedi. Lütfen tekrar deneyin.
+    <% } %>
+  </div>
+<% } %>
+
+      <h3 class="text-xl font-serif font-bold mb-6">Mesaj Gönder</h3>
+      <div class="space-y-6">
+        <div class="relative">
+          <input type="text" id="contact-name" name="name" required class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" placeholder=" ">
+          <label for="contact-name" class="floating">Adınız</label>
+        </div>
+        <div class="relative">
+          <input type="email" id="contact-email" name="email" required class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" placeholder=" ">
+          <label for="contact-email" class="floating">E-posta Adresi</label>
+        </div>
+        <div class="relative">
+          <input type="text" id="contact-subject" name="subject" class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" placeholder=" ">
+          <label for="contact-subject" class="floating">Konu</label>
+        </div>
+        <div class="relative">
+          <textarea id="contact-message" name="message" rows="4" required class="peer w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gold" placeholder=" "></textarea>
+          <label for="contact-message" class="floating">Mesajınız</label>
+        </div>
+      </div>
+      <div class="mt-8">
+        <button type="submit" class="w-full bg-gold hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition will-animate" data-anim="pop">Gönder</button>
+      </div>
+    </form>
+
+  </div>
+</section>

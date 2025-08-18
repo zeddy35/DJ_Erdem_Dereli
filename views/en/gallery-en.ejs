@@ -1,0 +1,15 @@
+<section class="pt-24 pb-24 bg-cream">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12 will-animate" data-anim="rise">
+      <h1 class="text-4xl font-serif font-bold text-gold">Gallery</h1>
+      <p class="text-gray-700">Highlights from recent events</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% for(let i=1;i<=18;i++){ %>
+        <a href="/images/gallery/<%= i %>.jpg" class="gallery-item group overflow-hidden rounded-lg shadow-md will-animate" data-anim="lift" style="--delay:<%= (i%6)*0.03 %>s">
+          <img src="/images/gallery/thumbs/<%= i %>.jpg" alt="Event <%= i %>" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+        </a>
+      <% } %>
+    </div>
+  </div>
+</section>

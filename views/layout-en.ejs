@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <%- include('en/partials/head-en') %>
+  <link rel="stylesheet" href="/css/transitions.css">
+</head>
+<body class="bg-[#FEFBF6] text-gray-800 font-sans">
+  <%- include('en/partials/navbar-en') %>
+
+  <!-- Swup container: only this part swaps between pages -->
+  <main id="swup" class="transition-fade">
+    <%- body %>
+  </main>
+
+  <%- include('en/partials/footer-en') %>
+
+  <!-- Libs -->
+  <script src="https://unpkg.com/swup@4"></script>
+  <script src="https://unpkg.com/motion"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.3/dist/simple-lightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.3/dist/simple-lightbox.min.js"></script>
+
+  <!-- App -->
+  <script src="/js/main.js"></script>
+</body>
+</html>
