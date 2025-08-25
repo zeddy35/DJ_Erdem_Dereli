@@ -144,15 +144,17 @@
       <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-gold">Event Gallery</h2>
       <p class="text-lg max-w-2xl mx-auto">Capturing the energy and atmosphere of past events</p>
     </div>
+    <% const _preview = (typeof galleryPreview !== 'undefined' && Array.isArray(galleryPreview)) ? galleryPreview : []; %>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <% for(let i=1;i<=6;i++){ %>
-        <a href="/images/gallery/<%= i %>.jpg" class="gallery-item group overflow-hidden rounded-lg shadow-md will-animate" data-anim="lift" style="--delay:<%= i * 0.03 %>s">
-          <img src="/images/gallery/thumbs/<%= i %>.jpg" alt="Event <%= i %>" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+      <% _preview.forEach((img, i) => { %>
+        <a href="<%= img.full %>" class="gallery-item group overflow-hidden rounded-lg shadow-md will-animate"
+          data-anim="lift" style="--delay:<%= (i%6)*0.03 %>s" title="<%= img.section %>">
+          <img src="<%= img.thumb %>" alt="<%= img.alt %>" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 grid place-items-center transition duration-300">
             <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition duration-300"></i>
           </div>
         </a>
-      <% } %>
+      <% }) %>
     </div>
     <div class="text-center mt-10">
       <a href="/gallery" class="border border-gold text-gold px-6 py-2 rounded-full hover:bg-gold hover:text-white transition inline-block will-animate" data-anim="pop">View More Photos</a>

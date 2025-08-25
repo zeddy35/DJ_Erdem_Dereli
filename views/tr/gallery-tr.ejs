@@ -1,0 +1,41 @@
+<section class="mt-[100px]">
+  <% (gallerySections || []).forEach((sec, sIdx) => { %>
+    <div class="mb-10 gallery">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl lg:text-6xl font-serif font-bold mb-6 text-gold text-center tracking-wide">
+          <%= sec.title %>
+        </h2>
+
+        <!-- WIDTH CAP -->
+        <div class="mx-auto w-full max-w-[980px] md:max-w-[900px] lg:max-w-[980px]">
+          <!-- MAIN (aspect-video KALKSIN) -->
+          <section id="main-<%= sIdx %>" class="splide main rounded-xl shadow-xl border border-gold/40">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <% sec.images.forEach((img) => { %>
+                  <li class="splide__slide">
+                    <img src="<%= img.full %>" alt="<%= img.alt %>" loading="lazy">
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          </section>
+
+          <!-- THUMBS -->
+          <section id="thumbs-<%= sIdx %>" class="splide thumbs mt-4">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <% sec.images.forEach((img) => { %>
+                  <li class="splide__slide">
+                    <img src="<%= img.thumb %>" alt="<%= img.alt %>" loading="lazy"
+                         class="rounded-md">
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</section>

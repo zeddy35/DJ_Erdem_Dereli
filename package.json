@@ -1,0 +1,34 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "dev:css": "tailwindcss -i ./public/css/styles.css -o ./public/css/output.css -w",
+    "r2:sync": "node ./scripts/r2-sync.mjs",
+    "r2:dry": "cross-env DRY_RUN=1 node ./scripts/r2-sync.mjs",
+    "r2:fix": "node ./scripts/r2-mv-into-images.mjs",
+    "r2:fix:dry": "node ./scripts/r2-mv-into-images.mjs --dry"
+  },
+  "dependencies": {
+    "aws": "^0.0.3-2",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "fs": "^0.0.1-security",
+    "nodemailer": "^7.0.5",
+    "splide": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.873.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "dotenv": "^17.2.1",
+    "fast-glob": "^3.3.3",
+    "mime": "^4.0.7",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.13"
+  }
+}

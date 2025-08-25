@@ -34,3 +34,4 @@ public/videos/
 public/videos/**/*.mp4
 public/videos/**/*.mov
 public/images
+public/favicon.ico
